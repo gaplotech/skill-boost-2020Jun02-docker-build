@@ -1,12 +1,12 @@
-FROM node:12
+FROM node:12-alpine
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Installing dependencies
-COPY package*.json ./
+COPY package-lock.json ./
 
-RUN npm install
+RUN npm ci
 
 # Copying source files
 COPY . .
