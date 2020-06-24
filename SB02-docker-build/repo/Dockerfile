@@ -4,7 +4,7 @@ FROM node:12-alpine
 WORKDIR /usr/src/app
 
 # Installing dependencies
-COPY package-lock.json ./
+COPY package*.json ./
 
 RUN npm ci
 
