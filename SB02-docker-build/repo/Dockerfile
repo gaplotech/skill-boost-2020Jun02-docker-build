@@ -12,9 +12,6 @@ COPY . .
 
 # Building app
 RUN npm run build
-RUN npm run export
 
-
-FROM nginx:alpine
-
-COPY --from=builder /usr/src/app/out /usr/share/nginx/html
+# Running the app
+CMD [ "npm", "start" ] 
