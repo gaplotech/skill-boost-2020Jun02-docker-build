@@ -7,8 +7,11 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 
+# Relative static resource file cache extract out to reduce repetitive build
+COPY public/ public/
+
 # Copying source files
-COPY . .
+COPY pages/ pages/
 
 # Building app
 RUN npm run build
