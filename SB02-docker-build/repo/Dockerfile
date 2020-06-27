@@ -9,7 +9,8 @@ COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
 
 # Copying source files
-COPY . .
+COPY pages ./pages/
+COPY public ./public/
 
 # Building app
 RUN npm run build
